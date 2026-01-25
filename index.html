@@ -1,106 +1,140 @@
-:root{
-  --bg:#0b0d10;
-  --card:#12151b;
-  --text:#e9eef5;
-  --muted:#a7b0bf;
-  --line:#222838;
-  --accent:#67d4ff;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mario C. Calatan — Resume</title>
+  <meta name="description" content="Utility Systems Engineer | GIS & SCADA Specialist | Smart Grid & Web GIS Developer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; }
-body{
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1000px 600px at 30% -10%, #1a2335 0%, rgba(26,35,53,0) 60%),
-              radial-gradient(800px 500px at 90% 0%, #142e2b 0%, rgba(20,46,43,0) 55%),
-              var(--bg);
-  color:var(--text);
-  line-height:1.55;
-}
+<body>
+  <header class="wrap header">
+    <div class="title">
+      <h1>Mario C. Calatan</h1>
+      <p class="role">Utility Systems Engineer • GIS & SCADA Specialist • Smart Grid & Web GIS Developer</p>
+      <p class="meta">
+        Benguet, Philippines · <a href="tel:+639178778099">+63 917 877 8099</a>
+        · <span class="muted">Email:</span> <a href="mailto:youremail@example.com">youremail@example.com</a>
+      </p>
+      <div class="links">
+        <a class="pill" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="pill" href="https://github.com/marioccalatan" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
-a{ color:var(--accent); text-decoration:none; }
-a:hover{ text-decoration:underline; }
+  <main class="wrap">
+    <section class="card">
+      <h2>Professional Summary</h2>
+      <p>
+        Electrical Engineer with 9+ years of experience in electric distribution utilities, specializing in GIS mapping,
+        smart grid systems, SCADA integration, and utility data management. Strong background in web development,
+        databases, and industrial communication protocols (DNP3, Modbus). Proven ability to design, model, and modernize
+        utility systems for operational efficiency and regulatory compliance.
+      </p>
+    </section>
 
-.wrap{ max-width: 980px; margin: 0 auto; padding: 18px; }
+    <section class="grid">
+      <section class="card">
+        <h2>Core Skills</h2>
+        <ul class="bullets">
+          <li><b>Utility Engineering:</b> distribution planning & design, smart grid modeling</li>
+          <li><b>SCADA / OT:</b> SCADA integration, Modbus, DNP3, data mapping & simulation</li>
+          <li><b>GIS:</b> utility network mapping, topology modeling, QGIS/PostGIS</li>
+          <li><b>Web GIS:</b> OpenLayers / Leaflet, web dashboards</li>
+          <li><b>Development:</b> PHP, JavaScript, CSS, Python</li>
+          <li><b>Databases:</b> PostgreSQL/PostGIS, MySQL/MariaDB, Oracle, MS SQL, advanced SQL</li>
+        </ul>
+      </section>
 
-.header{
-  padding-top: 28px;
-  padding-bottom: 8px;
-}
+      <section class="card">
+        <h2>Highlights</h2>
+        <ul class="bullets">
+          <li>Built and maintained utility GIS datasets supporting planning & operations.</li>
+          <li>Supported feeder/substation SCADA integration and modernization initiatives.</li>
+          <li>Worked across planning, design, metering quality control and service processing.</li>
+          <li>Strong hands-on experience with database-backed systems and automation.</li>
+        </ul>
+      </section>
+    </section>
 
-.title h1{
-  margin: 0 0 6px;
-  font-size: 34px;
-  letter-spacing: 0.2px;
-}
+    <section class="card">
+      <h2>Professional Experience</h2>
 
-.role{
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-size: 15px;
-}
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <h3>Special Equipment & Metering Officer</h3>
+            <p class="org">Benguet Electric Cooperative, Inc. (BENECO)</p>
+          </div>
+          <p class="date">2019 – 2020</p>
+        </div>
+        <ul class="bullets">
+          <li>Performed testing, quality control, and evaluation of metering and utility equipment.</li>
+          <li>Processed and reviewed service applications for compliance and technical accuracy.</li>
+          <li>Ensured adherence to utility standards and regulatory requirements.</li>
+        </ul>
+      </div>
 
-.meta{ margin: 0 0 12px; color: var(--muted); }
-.muted{ color: var(--muted); }
-.small{ font-size: 12px; }
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <h3>Planning & Design Engineer</h3>
+            <p class="org">Benguet Electric Cooperative, Inc. (BENECO)</p>
+          </div>
+          <p class="date">2013 – 2019</p>
+        </div>
+        <ul class="bullets">
+          <li>Led project planning and electrical design for distribution network expansion.</li>
+          <li>Supported modeling and development of smart grid systems for improved monitoring and control.</li>
+          <li>Maintained and enhanced GIS-based mapping of the distribution network.</li>
+          <li>Supported SCADA integration for substations and feeder-level monitoring.</li>
+        </ul>
+      </div>
 
-.links{ display:flex; gap:10px; flex-wrap:wrap; }
-.pill{
-  display:inline-block;
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255,255,255,0.03);
-}
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <h3>GIS Engineer</h3>
+            <p class="org">Benguet Electric Cooperative, Inc. (BENECO)</p>
+          </div>
+          <p class="date">2011 – 2012</p>
+        </div>
+        <ul class="bullets">
+          <li>Updated and maintained GIS maps of the electric distribution network.</li>
+          <li>Ensured accuracy of spatial data for planning, operations, and reporting.</li>
+        </ul>
+      </div>
+    </section>
 
-.card{
-  background: rgba(18,21,27,0.85);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px 16px 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-  margin: 14px 0;
-}
+    <section class="grid">
+      <section class="card">
+        <h2>Education</h2>
+        <p><b>Bachelor of Science in Electrical Engineering</b><br />Saint Louis University — Baguio City (2006 – 2011)</p>
+      </section>
 
-h2{
-  margin: 0 0 10px;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-}
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <p class="meta">
+          Phone: <a href="tel:+639178778099">+63 917 877 8099</a><br />
+          Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br />
+          GitHub: <a href="https://github.com/marioccalatan" target="_blank" rel="noreferrer">github.com/marioccalatan</a>
+        </p>
+        <p class="muted small">
+          Tip: Replace the email, LinkedIn, and add a “Projects” section when ready.
+        </p>
+      </section>
+    </section>
 
-h3{
-  margin: 0 0 4px;
-  font-size: 14.5px;
-}
+    <footer class="wrap footer">
+      <p class="muted small">© <span id="y"></span> Mario C. Calatan · Built with HTML/CSS on GitHub Pages</p>
+    </footer>
+  </main>
 
-.org{ margin: 0; color: var(--muted); font-size: 13px; }
-.date{ margin: 0; color: var(--muted); font-size: 13px; }
-
-.grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.bullets{
-  margin: 10px 0 0;
-  padding-left: 18px;
-}
-.bullets li{ margin: 6px 0; }
-
-.job{ padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.08); margin-top: 10px; }
-.job:first-of-type{ border-top: 0; margin-top: 0; }
-
-.job-head{
-  display:flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: baseline;
-}
-
-.footer{ padding-bottom: 28px; }
-
-@media (max-width: 760px){
-  .grid{ grid-template-columns: 1fr; }
-  .title h1{ font-size: 28px; }
-}
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
