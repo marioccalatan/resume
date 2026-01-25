@@ -203,3 +203,61 @@ h3 {
     display: none;
   }
 }
+/* PROJECTS */
+.project-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-meta {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(103,212,255,0.25);
+  background: rgba(103,212,255,0.10);
+  color: var(--text);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Horizontal scroll photo gallery (no JS needed) */
+.gallery {
+  margin-top: 14px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 320px);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.shot {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  scroll-snap-align: start;
+}
+
+.shot img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.shot figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
