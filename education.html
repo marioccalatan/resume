@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Education — Mario C. Calatan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <div class="brand">Mario C. Calatan</div>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a class="active" href="./education.html">Education</a>
+      <a href="./experience.html">Professional Experience</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/marioccalatan" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h1>Education</h1>
+
+    <table class="edu-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>School</th>
+          <th>Location</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Elementary</td>
+          <td>Kiwas Elementary School</td>
+          <td>Tadiangan, Tuba, Benguet</td>
+          <td>1996 – 2002</td>
+        </tr>
+        <tr>
+          <td>High School</td>
+          <td>Pines City National High School</td>
+          <td>Palma St., Baguio City</td>
+          <td>2002 – 2006</td>
+        </tr>
+        <tr>
+          <td>College</td>
+          <td>Bachelor of Science in Electrical Engineering<br>Saint Louis University</td>
+          <td>Bonifacio St., Baguio City</td>
+          <td>2006 – 2011</td>
+        </tr>
+        <tr>
+          <td>Post Graduate</td>
+          <td>Master in Urban Management<br>Benguet State University</td>
+          <td>La Trinidad, Benguet</td>
+          <td>2018 – 2020</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Mario C. Calatan · GitHub Pages
+  </footer>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
