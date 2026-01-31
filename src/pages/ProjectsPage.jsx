@@ -1,4 +1,6 @@
 function ProjectsPage() {
+  const base = import.meta.env.BASE_URL
+
   return (
     <main className="wrap">
       <section className="card">
@@ -30,22 +32,20 @@ function ProjectsPage() {
 
         <div className="gallery">
           <figure className="shot">
-            <img src="/assets/projects/scada/scada-01.jpg" alt="SCADA Project Photo 1" />
+            <img src={`${base}assets/projects/scada/scada-01.jpg`} alt="SCADA Project Photo 1" />
             <figcaption>SCADA/Control Room</figcaption>
           </figure>
 
           <figure className="shot">
-            <img src="/assets/projects/scada/scada-02.jpg" alt="SCADA Project Photo 2" />
-            <figcaption>Presenation of SCADA in Florida USA</figcaption>
+            <img src={`${base}assets/projects/scada/scada-02.jpg`} alt="SCADA Project Photo 2" />
+            <figcaption>Presentation of SCADA in Florida USA</figcaption>
           </figure>
 
           <figure className="shot">
-            <img src="/assets/projects/scada/scada-03.jpg" alt="SCADA Project Photo 3" />
+            <img src={`${base}assets/projects/scada/scada-03.jpg`} alt="SCADA Project Photo 3" />
             <figcaption>Sample SLD SCADA</figcaption>
           </figure>
         </div>
-
-     
       </section>
 
       {/* GIS PROJECT */}
@@ -54,7 +54,7 @@ function ProjectsPage() {
           <div>
             <h2>Utility GIS Development & Network Data Modernization</h2>
             <p className="project-meta">
-              Tools: AutoCAD • ArcView • ArcMap • QGIS (Quantum GIS)• Web GIS • PostGIS • Network Topology • Outage Mapping
+              Tools: AutoCAD • ArcView • ArcMap • QGIS (Quantum GIS) • Web GIS • PostGIS • Network Topology • Outage Mapping
             </p>
           </div>
           <span className="tag">GIS</span>
@@ -71,22 +71,20 @@ function ProjectsPage() {
 
         <div className="gallery">
           <figure className="shot">
-            <img src="/assets/projects/gis/gis-01.jpg" alt="GIS Project Photo 1" />
+            <img src={`${base}assets/projects/gis/gis-01.jpg`} alt="GIS Project Photo 1" />
             <figcaption>Distribution network mapping</figcaption>
           </figure>
 
           <figure className="shot">
-            <img src="/assets/projects/gis/gis-02.jpg" alt="GIS Project Photo 2" />
-            <figcaption>Web GIS using postgis and openlayers</figcaption>
+            <img src={`${base}assets/projects/gis/gis-02.jpg`} alt="GIS Project Photo 2" />
+            <figcaption>Web GIS using PostGIS and OpenLayers</figcaption>
           </figure>
 
           <figure className="shot">
-            <img src="/assets/projects/gis/gis-03.jpg" alt="GIS Project Photo 3" />
+            <img src={`${base}assets/projects/gis/gis-03.jpg`} alt="GIS Project Photo 3" />
             <figcaption>GIS with outage map using network topology</figcaption>
           </figure>
         </div>
-
-   
       </section>
 
       <footer className="footer">

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
 function Navbar() {
+    const base = import.meta.env.BASE_URL
   const [open, setOpen] = useState(false)
 
   const closeMenu = () => setOpen(false)
@@ -37,7 +38,7 @@ function Navbar() {
 
           <NavLink to="/contact">Contact</NavLink>
 
-          <a href="/assets/Mario_Calatan_Full_Resume.pdf" download>
+          <a href={`${base}assets/Mario_Calatan_Full_Resume.pdf`}  download>
             Resume (PDF)
           </a>
         </nav>

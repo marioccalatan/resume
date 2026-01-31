@@ -1,4 +1,5 @@
 function HomePage() {
+    const base = import.meta.env.BASE_URL
   return (
     <main className="wrap">
       <section className="card">
@@ -9,17 +10,17 @@ function HomePage() {
 
         <p className="meta">
           Benguet, Philippines · <a href="tel:+639178778099">+63 917 877 8099</a> ·{" "}
-          <a href="mailto:youremail@example.com">youremail@example.com</a>
+          <a href="mailto:marioccalatan@gmail.com<">marioccalatan@gmail.com</a>
         </p>
         <p style={{ marginTop: 14 }}>
-  <a
-    href="/assets/Mario_Calatan_Full_Resume.pdf"
-    download
-    className="btn"
-  >
-    📄 Download Resume (PDF)
-  </a>
-</p>
+          <a
+            href={`${base}assets/Mario_Calatan_Full_Resume.pdf`}
+            download
+            className="btn"
+          >
+            📄 Download Resume (PDF)
+          </a>
+        </p>
 
 
         <h2>Professional Summary</h2>

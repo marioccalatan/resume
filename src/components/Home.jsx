@@ -1,4 +1,5 @@
 function Home() {
+  
   return (
     <main className="wrap">
       <section className="card">
@@ -9,7 +10,7 @@ function Home() {
 
         <p className="meta">
           Benguet, Philippines · <a href="tel:+639178778099">+63 917 877 8099</a> ·{" "}
-          <a href="mailto:youremail@example.com">youremail@example.com</a>
+          <a href="mailto:marioccalatan@gmail.com<">marioccalatan@gmail.com</a>
         </p>
 
         <h2>Professional Summary</h2>
