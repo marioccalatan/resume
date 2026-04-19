@@ -31,6 +31,17 @@ function HomePage() {
           (DNP3, Modbus), with proven leadership in system modernization, planning, and enterprise-wide
           implementation.
         </p>
+
+        <h2>Core Skills</h2>
+        <ul className="skills-list">
+          <li><strong>Electric Distribution Planning & Design</strong> – Power system planning, network design, and optimization</li>
+          <li><strong>Smart Grid & SCADA Systems</strong> – DNP3, Modbus, real-time monitoring and control</li>
+          <li><strong>GIS & Network Modeling</strong> – QGIS, PostGIS, spatial analysis and visualization</li>
+          <li><strong>Web & Utility Systems Development</strong> – PHP, Python, JavaScript, React, Node.js, full-stack applications</li>
+          <li><strong>AI & Automation Tools</strong> – Copilot, GPT, Claude, Base44 for code generation and problem-solving</li>
+          <li><strong>Databases</strong> – PostgreSQL, MySQL, Oracle, MS SQL Server, data architecture and optimization</li>
+          <li><strong>Facebook Marketing</strong> – Social media campaigns, audience targeting, analytics, and digital engagement strategies</li>
+        </ul>
       </section>
 
       <footer className="footer">

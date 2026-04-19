@@ -40,3 +40,22 @@
 .read-the-docs {
   color: #888;
 }
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.skills-list li {
+  margin: 0.8rem 0;
+  padding: 0.6rem 0.8rem;
+  background-color: #f3f4f6;
+  border-left: 4px solid #3b82f6;
+  border-radius: 4px;
+}
+
+.skills-list strong {
+  color: #1f2937;
+}
