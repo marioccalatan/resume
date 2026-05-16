@@ -87,6 +87,70 @@ function ProjectsPage() {
         </div>
       </section>
 
+      {/* WEBDEV PROJECT */}
+      <section className="card project">
+        <div className="project-head">
+          <div>
+            <h2>Utility Web Developments — Network Enterprise System</h2>
+            <p className="project-meta">
+              Tools: React • Node.js • GitHub Copilot (VS Code) • PostgreSQL
+            </p>
+          </div>
+          <span className="tag">Web Dev</span>
+        </div>
+
+        <p>
+          Developed an all-in-one web-based engineering platform called the{' '}
+          <strong>Network Enterprise System</strong>, built using React and Node.js
+          with the aid of GitHub Copilot in VS Code. The system consolidates multiple
+          engineering functions into a single integrated application for the utility's
+          engineering department.
+        </p>
+
+        <ul className="bullets">
+          <li><strong>GIS</strong> — Interactive utility network mapping and spatial analysis</li>
+          <li><strong>Network Management System</strong> — Real-time network monitoring and control workflows</li>
+          <li><strong>Compliance Reporting System</strong> — Automated generation of regulatory compliance reports</li>
+          <li><strong>Technical Data Repository</strong> — Centralized store for engineering documents and records</li>
+          <li><strong>Transformer Management System</strong> — Asset tracking and maintenance scheduling for transformers</li>
+          <li><strong>Calibration Management System</strong> — Instrument calibration records and due-date tracking</li>
+          <li><strong>Meter Data Management System</strong> — Meter asset registry, readings, and data validation</li>
+          <li><strong>Network Reference Center</strong> — Reference library for standards, drawings, and technical specifications</li>
+        </ul>
+
+        <div className="gallery">
+          {[
+            { file: 'webdev-01.png', caption: 'Dashboard / Overview' },
+            { file: 'webdev-02.png', caption: 'GIS Module' },
+            { file: 'webdev-03.png', caption: 'Network Management System' },
+            { file: 'webdev-04.png', caption: 'Compliance Reporting System' },
+            { file: 'webdev-05.png', caption: 'Technical Data Repository' },
+            { file: 'webdev-06.png', caption: 'Transformer Management System' },
+            { file: 'webdev-07.png', caption: 'Calibration Management System' },
+            { file: 'webdev-08.png', caption: 'Meter Data Management System' },
+            { file: 'webdev-09.png', caption: 'Network Reference Center' },
+          ].map(({ file, caption }) => (
+            <figure key={file} className="shot">
+              <img
+                src={`${base}assets/projects/webdev/${file}`}
+                alt={caption}
+                onError={e => {
+                  e.target.onerror = null;
+                  e.target.src = `data:image/svg+xml,${encodeURIComponent(
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180">` +
+                    `<rect width="100%" height="100%" fill="#1a1e27"/>` +
+                    `<text x="50%" y="38%" fill="#a7b0bf" font-family="system-ui" font-size="13" text-anchor="middle" dominant-baseline="middle">${file}</text>` +
+                    `<text x="50%" y="58%" fill="#67d4ff" font-family="system-ui" font-size="11" text-anchor="middle" dominant-baseline="middle">Add screenshot here</text>` +
+                    `</svg>`
+                  )}`;
+                }}
+              />
+              <figcaption>{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <footer className="footer">
         © {new Date().getFullYear()} Mario C. Calatan
       </footer>
