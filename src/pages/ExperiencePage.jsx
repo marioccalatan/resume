@@ -8,6 +8,45 @@ function ExperiencePage() {
           cross-functional engineering leadership.
         </p>
 
+        <h2>Software Development &amp; Automation</h2>
+        <ul className="skills-list">
+          <li><strong>Web-based Utility Systems Development</strong> - Built internal platforms for calibration, metering, compliance, and technical records management</li>
+          <li><strong>Full-stack Development</strong> - PHP, Python, JavaScript, React, and Node.js</li>
+          <li><strong>Utility Data Integration and Analytics</strong> - Connected operational datasets to reporting and decision-support workflows</li>
+          <li><strong>Database Design and Optimization</strong> - Schema design, query optimization, and data quality controls for utility applications</li>
+          <li><strong>AI-Assisted Development and Automation</strong> - Applied GitHub Copilot and AI tools to accelerate coding, automation, and documentation tasks</li>
+        </ul>
+
+        <h2>Databases</h2>
+        <ul className="skills-list">
+          <li><strong>PostgreSQL</strong></li>
+          <li><strong>MySQL/MariaDB</strong></li>
+          <li><strong>Oracle</strong></li>
+          <li><strong>Microsoft SQL Server</strong></li>
+        </ul>
+
+        <h2>Role Alignment Highlights</h2>
+        <ul className="bullets">
+          <li>Facilitated cross-functional technical coordination for Smart Grid and digital utility initiatives.</li>
+          <li>Contributed to AMI deployment strategy from pilot validation through operational rollout.</li>
+          <li>Led SCADA and GIS modernization efforts that support OMS/DMS integration and ADMS readiness.</li>
+          <li>Built engineering web systems and repositories to strengthen data governance and process automation.</li>
+          <li>Served as Technical Working Group Chairman for the Bids and Awards Committee, leading technical evaluations and bid review recommendations.</li>
+          <li>Performed and supervised technical testing activities including transformer tests, insulation power factor tests, relay tests, meter accuracy tests, and CT/PT tests.</li>
+          <li>Applied project planning and resource management for materials, manpower, and implementation timelines.</li>
+          <li>Supported technical compliance through calibration controls, structured reporting, and audit-ready records.</li>
+        </ul>
+
+        <h2>Skills</h2>
+        <ul className="skills-list">
+          <li><strong>Smart Grid Architecture and Integration</strong> - AMI/AMR, SCADA, OMS, DMS, and ADMS readiness</li>
+          <li><strong>Technical Working Group Leadership</strong> - Cross-functional facilitation, stakeholder coordination, and policy support</li>
+          <li><strong>Grid Modernization Program Management</strong> - Pilot design, rollout execution, and utility project governance</li>
+          <li><strong>Business Analytics for Utility Operations</strong> - Grid data interpretation, reporting, and operational insight generation</li>
+          <li><strong>R&D and Technology Validation</strong> - POC execution, framework evaluation, and implementation audit support</li>
+          <li><strong>Regulatory and Management System Compliance</strong> - Structured documentation, calibration controls, and audit readiness</li>
+        </ul>
+
         <div className="timeline">
           <div className="item">
             <span className="year">2024 – Present</span>
@@ -71,28 +110,6 @@ function ExperiencePage() {
             </p>
           </div>
         </div>
-
-        <h2>Role Alignment Highlights</h2>
-        <ul className="bullets">
-          <li>Facilitated cross-functional technical coordination for Smart Grid and digital utility initiatives.</li>
-          <li>Contributed to AMI deployment strategy from pilot validation through operational rollout.</li>
-          <li>Led SCADA and GIS modernization efforts that support OMS/DMS integration and ADMS readiness.</li>
-          <li>Built engineering web systems and repositories to strengthen data governance and process automation.</li>
-          <li>Served as Technical Working Group Chairman for the Bids and Awards Committee, leading technical evaluations and bid review recommendations.</li>
-          <li>Performed and supervised technical testing activities including transformer tests, insulation power factor tests, relay tests, meter accuracy tests, and CT/PT tests.</li>
-          <li>Applied project planning and resource management for materials, manpower, and implementation timelines.</li>
-          <li>Supported technical compliance through calibration controls, structured reporting, and audit-ready records.</li>
-        </ul>
-
-        <h2>Skills</h2>
-        <ul className="skills-list">
-          <li><strong>Smart Grid Architecture and Integration</strong> - AMI/AMR, SCADA, OMS, DMS, and ADMS readiness</li>
-          <li><strong>Technical Working Group Leadership</strong> - Cross-functional facilitation, stakeholder coordination, and policy support</li>
-          <li><strong>Grid Modernization Program Management</strong> - Pilot design, rollout execution, and utility project governance</li>
-          <li><strong>Business Analytics for Utility Operations</strong> - Grid data interpretation, reporting, and operational insight generation</li>
-          <li><strong>R&D and Technology Validation</strong> - POC execution, framework evaluation, and implementation audit support</li>
-          <li><strong>Regulatory and Management System Compliance</strong> - Structured documentation, calibration controls, and audit readiness</li>
-        </ul>
       </section>
 
       <footer className="footer">

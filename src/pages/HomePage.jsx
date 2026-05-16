@@ -3,24 +3,33 @@ function HomePage() {
   return (
     <main className="wrap">
       <section className="card">
-        <h1>Mario C. Calatan</h1>
-        <p className="role">
-          Utility Systems Engineer • GIS & SCADA Specialist • Smart Grid & Web GIS Developer
-        </p>
+        <div className="home-hero">
+          <img
+            src={`${base}assets/mario.png`}
+            alt="Mario C. Calatan"
+            className="home-photo"
+          />
+          <div>
+            <h1>Mario C. Calatan</h1>
+            <p className="role">
+              Utility Systems Engineer • GIS & SCADA Specialist • Smart Grid & Web GIS Developer
+            </p>
 
-        <p className="meta">
-          Benguet, Philippines · <a href="tel:+639178778099">+63 917 877 8099</a> ·{" "}
-          <a href="mailto:marioccalatan@gmail.com">marioccalatan@gmail.com</a>
-        </p>
-        <p style={{ marginTop: 14 }}>
-          <a
-            href={`${base}assets/Mario_Calatan_Full_Resume.pdf`}
-            download
-            className="btn"
-          >
-            📄 Download Resume (PDF)
-          </a>
-        </p>
+            <p className="meta">
+              Benguet, Philippines · <a href="tel:+639178778099">+63 917 877 8099</a> ·{" "}
+              <a href="mailto:marioccalatan@gmail.com">marioccalatan@gmail.com</a>
+            </p>
+            <p style={{ marginTop: 14 }}>
+              <a
+                href={`${base}assets/Mario_Calatan_Full_Resume.pdf`}
+                download
+                className="btn"
+              >
+                📄 Download Resume (PDF)
+              </a>
+            </p>
+          </div>
+        </div>
 
 
         <h2>Professional Summary</h2>

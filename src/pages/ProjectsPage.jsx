@@ -1,6 +1,74 @@
 function ProjectsPage() {
   const base = import.meta.env.BASE_URL
 
+  const scadaItems = [
+    { src: `${base}assets/projects/scada/scada-01.jpg`, alt: 'SCADA Project Photo 1', caption: 'SCADA/Control Room' },
+    { src: `${base}assets/projects/scada/scada-02.jpg`, alt: 'SCADA Project Photo 2', caption: 'Presentation of SCADA in Florida USA' },
+    { src: `${base}assets/projects/scada/scada-03.jpg`, alt: 'SCADA Project Photo 3', caption: 'Sample SLD SCADA' },
+  ]
+
+  const gisItems = [
+    { src: `${base}assets/projects/gis/gis-01.jpg`, alt: 'GIS Project Photo 1', caption: 'Distribution network mapping' },
+    { src: `${base}assets/projects/gis/gis-02.jpg`, alt: 'GIS Project Photo 2', caption: 'Web GIS using PostGIS and OpenLayers' },
+    { src: `${base}assets/projects/gis/gis-03.jpg`, alt: 'GIS Project Photo 3', caption: 'GIS with outage map using network topology' },
+  ]
+
+  const webdevItems = [
+    { file: 'webdev-01.png', caption: 'Dashboard / Overview' },
+    { file: 'webdev-02.png', caption: 'GIS Module' },
+    { file: 'webdev-03.png', caption: 'Network Management System' },
+    { file: 'webdev-04.png', caption: 'Compliance Reporting System' },
+    { file: 'webdev-05.png', caption: 'Technical Data Repository' },
+    { file: 'webdev-06.png', caption: 'Transformer Management System' },
+    { file: 'webdev-07.png', caption: 'Calibration Management System' },
+    { file: 'webdev-08.png', caption: 'Meter Data Management System' },
+    { file: 'webdev-09.png', caption: 'Network Reference Center' },
+  ].map(({ file, caption }) => ({
+    src: `${base}assets/projects/webdev/${file}`,
+    alt: caption,
+    caption,
+    file,
+  }))
+
+  const onImageError = (e, file) => {
+    e.target.onerror = null
+    e.target.src = `data:image/svg+xml,${encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180">` +
+      `<rect width="100%" height="100%" fill="#1a1e27"/>` +
+      `<text x="50%" y="38%" fill="#a7b0bf" font-family="system-ui" font-size="13" text-anchor="middle" dominant-baseline="middle">${file}</text>` +
+      `<text x="50%" y="58%" fill="#67d4ff" font-family="system-ui" font-size="11" text-anchor="middle" dominant-baseline="middle">Add screenshot here</text>` +
+      `</svg>`
+    )}`
+  }
+
+  const renderCarousel = (items, carouselClass) => {
+    const doubled = [...items, ...items]
+
+    return (
+      <div className={`carousel ${carouselClass}`}>
+        <div className="carousel-track">
+          {doubled.map((item, index) => {
+            const isClone = index >= items.length
+            return (
+              <figure
+                key={`${item.alt}-${index}`}
+                className="shot"
+                aria-hidden={isClone ? 'true' : undefined}
+              >
+                <img
+                  src={item.src}
+                  alt={isClone ? '' : item.alt}
+                  onError={e => onImageError(e, item.file || item.alt)}
+                />
+                <figcaption>{item.caption}</figcaption>
+              </figure>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <main className="wrap">
       <section className="card">
@@ -30,22 +98,7 @@ function ProjectsPage() {
           for future phases such as Outage Management System (OMS) and Distribution Management System (DMS) readiness.
         </p>
 
-        <div className="gallery">
-          <figure className="shot">
-            <img src={`${base}assets/projects/scada/scada-01.jpg`} alt="SCADA Project Photo 1" />
-            <figcaption>SCADA/Control Room</figcaption>
-          </figure>
-
-          <figure className="shot">
-            <img src={`${base}assets/projects/scada/scada-02.jpg`} alt="SCADA Project Photo 2" />
-            <figcaption>Presentation of SCADA in Florida USA</figcaption>
-          </figure>
-
-          <figure className="shot">
-            <img src={`${base}assets/projects/scada/scada-03.jpg`} alt="SCADA Project Photo 3" />
-            <figcaption>Sample SLD SCADA</figcaption>
-          </figure>
-        </div>
+        {renderCarousel(scadaItems, 'carousel-slow')}
       </section>
 
       {/* GIS PROJECT */}
@@ -69,22 +122,7 @@ function ProjectsPage() {
           data collection, validation, and continuous GIS dataset improvement.
         </p>
 
-        <div className="gallery">
-          <figure className="shot">
-            <img src={`${base}assets/projects/gis/gis-01.jpg`} alt="GIS Project Photo 1" />
-            <figcaption>Distribution network mapping</figcaption>
-          </figure>
-
-          <figure className="shot">
-            <img src={`${base}assets/projects/gis/gis-02.jpg`} alt="GIS Project Photo 2" />
-            <figcaption>Web GIS using PostGIS and OpenLayers</figcaption>
-          </figure>
-
-          <figure className="shot">
-            <img src={`${base}assets/projects/gis/gis-03.jpg`} alt="GIS Project Photo 3" />
-            <figcaption>GIS with outage map using network topology</figcaption>
-          </figure>
-        </div>
+        {renderCarousel(gisItems, 'carousel-medium')}
       </section>
 
       {/* WEBDEV PROJECT */}
@@ -118,37 +156,7 @@ function ProjectsPage() {
           <li><strong>Network Reference Center</strong> — Reference library for standards, drawings, and technical specifications</li>
         </ul>
 
-        <div className="gallery">
-          {[
-            { file: 'webdev-01.png', caption: 'Dashboard / Overview' },
-            { file: 'webdev-02.png', caption: 'GIS Module' },
-            { file: 'webdev-03.png', caption: 'Network Management System' },
-            { file: 'webdev-04.png', caption: 'Compliance Reporting System' },
-            { file: 'webdev-05.png', caption: 'Technical Data Repository' },
-            { file: 'webdev-06.png', caption: 'Transformer Management System' },
-            { file: 'webdev-07.png', caption: 'Calibration Management System' },
-            { file: 'webdev-08.png', caption: 'Meter Data Management System' },
-            { file: 'webdev-09.png', caption: 'Network Reference Center' },
-          ].map(({ file, caption }) => (
-            <figure key={file} className="shot">
-              <img
-                src={`${base}assets/projects/webdev/${file}`}
-                alt={caption}
-                onError={e => {
-                  e.target.onerror = null;
-                  e.target.src = `data:image/svg+xml,${encodeURIComponent(
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180">` +
-                    `<rect width="100%" height="100%" fill="#1a1e27"/>` +
-                    `<text x="50%" y="38%" fill="#a7b0bf" font-family="system-ui" font-size="13" text-anchor="middle" dominant-baseline="middle">${file}</text>` +
-                    `<text x="50%" y="58%" fill="#67d4ff" font-family="system-ui" font-size="11" text-anchor="middle" dominant-baseline="middle">Add screenshot here</text>` +
-                    `</svg>`
-                  )}`;
-                }}
-              />
-              <figcaption>{caption}</figcaption>
-            </figure>
-          ))}
-        </div>
+        {renderCarousel(webdevItems, 'carousel-fast')}
       </section>
 
       <footer className="footer">
