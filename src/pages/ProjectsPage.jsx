@@ -1,5 +1,85 @@
+import { useEffect } from 'react'
+
 function ProjectsPage() {
   const base = import.meta.env.BASE_URL
+
+  useEffect(() => {
+    const carousels = Array.from(document.querySelectorAll('.carousel'))
+    if (carousels.length === 0) {
+      return
+    }
+
+    const pauseForInteraction = carousel => {
+      carousel.dataset.resumeAt = String(Date.now() + 1400)
+    }
+
+    const listeners = carousels.map(carousel => {
+      const onPointerDown = () => pauseForInteraction(carousel)
+      const onTouchStart = () => pauseForInteraction(carousel)
+      const onPointerUp = () => pauseForInteraction(carousel)
+      const onPointerCancel = () => pauseForInteraction(carousel)
+      const onTouchEnd = () => pauseForInteraction(carousel)
+
+      carousel.addEventListener('pointerdown', onPointerDown)
+      carousel.addEventListener('touchstart', onTouchStart, { passive: true })
+      carousel.addEventListener('pointerup', onPointerUp)
+      carousel.addEventListener('pointercancel', onPointerCancel)
+      carousel.addEventListener('touchend', onTouchEnd)
+
+      carousel.dataset.resumeAt = '0'
+
+      return {
+        carousel,
+        onPointerDown,
+        onTouchStart,
+        onPointerUp,
+        onPointerCancel,
+        onTouchEnd,
+      }
+    })
+
+    const remainderByCarousel = new Map()
+    const tickMs = 16
+    const timerId = window.setInterval(() => {
+      carousels.forEach(carousel => {
+        const resumeAt = Number(carousel.dataset.resumeAt || 0)
+        if (Date.now() < resumeAt) {
+          return
+        }
+
+        const speed = Number(carousel.dataset.speed || 28)
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth
+        if (maxScroll <= 0) {
+          return
+        }
+
+        const previousRemainder = remainderByCarousel.get(carousel) || 0
+        const totalStep = speed * (tickMs / 1000) + previousRemainder
+        const wholePixels = Math.floor(totalStep)
+        remainderByCarousel.set(carousel, totalStep - wholePixels)
+
+        if (wholePixels <= 0) {
+          return
+        }
+
+        carousel.scrollLeft += wholePixels
+        if (carousel.scrollLeft >= maxScroll - 1) {
+          carousel.scrollLeft = 0
+        }
+      })
+    }, tickMs)
+
+    return () => {
+      window.clearInterval(timerId)
+      listeners.forEach(({ carousel, onPointerDown, onTouchStart, onPointerUp, onPointerCancel, onTouchEnd }) => {
+        carousel.removeEventListener('pointerdown', onPointerDown)
+        carousel.removeEventListener('touchstart', onTouchStart)
+        carousel.removeEventListener('pointerup', onPointerUp)
+        carousel.removeEventListener('pointercancel', onPointerCancel)
+        carousel.removeEventListener('touchend', onTouchEnd)
+      })
+    }
+  }, [])
 
   const scadaItems = [
     { src: `${base}assets/projects/scada/scada-01.jpg`, alt: 'SCADA Project Photo 1', caption: 'SCADA/Control Room' },
@@ -41,11 +121,11 @@ function ProjectsPage() {
     )}`
   }
 
-  const renderCarousel = (items, carouselClass) => {
+  const renderCarousel = (items, carouselClass, speed) => {
     const doubled = [...items, ...items]
 
     return (
-      <div className={`carousel ${carouselClass}`}>
+      <div className={`carousel ${carouselClass}`} data-speed={speed}>
         <div className="carousel-track">
           {doubled.map((item, index) => {
             const isClone = index >= items.length
@@ -98,7 +178,7 @@ function ProjectsPage() {
           for future phases such as Outage Management System (OMS) and Distribution Management System (DMS) readiness.
         </p>
 
-        {renderCarousel(scadaItems, 'carousel-slow')}
+        {renderCarousel(scadaItems, 'carousel-slow', 72)}
       </section>
 
       {/* GIS PROJECT */}
@@ -122,7 +202,7 @@ function ProjectsPage() {
           data collection, validation, and continuous GIS dataset improvement.
         </p>
 
-        {renderCarousel(gisItems, 'carousel-medium')}
+        {renderCarousel(gisItems, 'carousel-medium', 80)}
       </section>
 
       {/* WEBDEV PROJECT */}
@@ -156,7 +236,7 @@ function ProjectsPage() {
           <li><strong>Network Reference Center</strong> — Reference library for standards, drawings, and technical specifications</li>
         </ul>
 
-        {renderCarousel(webdevItems, 'carousel-fast')}
+        {renderCarousel(webdevItems, 'carousel-fast', 96)}
       </section>
 
       <footer className="footer">
