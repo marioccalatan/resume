@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import Reveal from '../components/Reveal'
+import TiltCard from '../components/TiltCard'
 
 function ProjectsPage() {
   const base = import.meta.env.BASE_URL
@@ -151,93 +153,99 @@ function ProjectsPage() {
 
   return (
     <main className="wrap">
-      <section className="card">
+      <Reveal as="section" className="card">
         <h1>Projects</h1>
         <p className="meta">
           Selected utility modernization projects covering SCADA, GIS, and operational systems.
         </p>
-      </section>
+      </Reveal>
 
       {/* SCADA PROJECT */}
-      <section className="card project">
-        <div className="project-head">
-          <div>
-            <h2>SCADA Modernization & Substation Modeling</h2>
-            <p className="project-meta">
-              Technology: Survalent SCADA • DNP3 over TCP/IP • Substation SLD modeling
-            </p>
+      <Reveal>
+        <TiltCard className="card project" maxTilt={4}>
+          <div className="project-head">
+            <div>
+              <h2>SCADA Modernization & Substation Modeling</h2>
+              <p className="project-meta">
+                Technology: Survalent SCADA • DNP3 over TCP/IP • Substation SLD modeling
+              </p>
+            </div>
+            <span className="tag">SCADA</span>
           </div>
-          <span className="tag">SCADA</span>
-        </div>
 
-        <p>
-          Led the development of substation models for six (6) substations using detailed
-          single-line diagrams (SLDs), incorporating protection devices, switching elements,
-          and operational interlocks to support reliable monitoring and control. Established
-          DNP3 communication over TCP/IP for field device integration, enabling scalable expansion
-          for future phases such as Outage Management System (OMS) and Distribution Management System (DMS) readiness.
-        </p>
+          <p>
+            Led the development of substation models for six (6) substations using detailed
+            single-line diagrams (SLDs), incorporating protection devices, switching elements,
+            and operational interlocks to support reliable monitoring and control. Established
+            DNP3 communication over TCP/IP for field device integration, enabling scalable expansion
+            for future phases such as Outage Management System (OMS) and Distribution Management System (DMS) readiness.
+          </p>
 
-        {renderCarousel(scadaItems, 'carousel-slow', 72)}
-      </section>
+          {renderCarousel(scadaItems, 'carousel-slow', 72)}
+        </TiltCard>
+      </Reveal>
 
       {/* GIS PROJECT */}
-      <section className="card project">
-        <div className="project-head">
-          <div>
-            <h2>Utility GIS Development & Network Data Modernization</h2>
-            <p className="project-meta">
-              Tools: AutoCAD • ArcView • ArcMap • QGIS (Quantum GIS) • Web GIS • PostGIS • Network Topology • Outage Mapping
-            </p>
+      <Reveal>
+        <TiltCard className="card project" maxTilt={4}>
+          <div className="project-head">
+            <div>
+              <h2>Utility GIS Development & Network Data Modernization</h2>
+              <p className="project-meta">
+                Tools: AutoCAD • ArcView • ArcMap • QGIS (Quantum GIS) • Web GIS • PostGIS • Network Topology • Outage Mapping
+              </p>
+            </div>
+            <span className="tag">GIS</span>
           </div>
-          <span className="tag">GIS</span>
-        </div>
 
-        <p>
-          Spearheaded the evolution of the utility GIS program from CAD-based drawings
-          through ESRI platforms (ArcView / ArcMap) and later migration to QGIS.
-          Coordinated large-scale field data gathering and network updates, supporting
-          accurate asset mapping for planning, operations, and system expansion.
-          Managed and guided a team of approximately twenty (20) engineers dedicated to
-          data collection, validation, and continuous GIS dataset improvement.
-        </p>
+          <p>
+            Spearheaded the evolution of the utility GIS program from CAD-based drawings
+            through ESRI platforms (ArcView / ArcMap) and later migration to QGIS.
+            Coordinated large-scale field data gathering and network updates, supporting
+            accurate asset mapping for planning, operations, and system expansion.
+            Managed and guided a team of approximately twenty (20) engineers dedicated to
+            data collection, validation, and continuous GIS dataset improvement.
+          </p>
 
-        {renderCarousel(gisItems, 'carousel-medium', 80)}
-      </section>
+          {renderCarousel(gisItems, 'carousel-medium', 80)}
+        </TiltCard>
+      </Reveal>
 
       {/* WEBDEV PROJECT */}
-      <section className="card project">
-        <div className="project-head">
-          <div>
-            <h2>Utility Web Developments — Network Enterprise System</h2>
-            <p className="project-meta">
-              Tools: React • Node.js • GitHub Copilot (VS Code) • PostgreSQL
-            </p>
+      <Reveal>
+        <TiltCard className="card project" maxTilt={4}>
+          <div className="project-head">
+            <div>
+              <h2>Utility Web Developments — Network Enterprise System</h2>
+              <p className="project-meta">
+                Tools: React • Node.js • GitHub Copilot (VS Code) • PostgreSQL
+              </p>
+            </div>
+            <span className="tag">Web Dev</span>
           </div>
-          <span className="tag">Web Dev</span>
-        </div>
 
-        <p>
-          Developed an all-in-one web-based engineering platform called the{' '}
-          <strong>Network Enterprise System</strong>, built using React and Node.js
-          with the aid of GitHub Copilot in VS Code. The system consolidates multiple
-          engineering functions into a single integrated application for the utility's
-          engineering department.
-        </p>
+          <p>
+            Developed an all-in-one web-based engineering platform called the{' '}
+            <strong>Network Enterprise System</strong>, built using React and Node.js
+            with the aid of GitHub Copilot in VS Code. The system consolidates multiple
+            engineering functions into a single integrated application for the utility's
+            engineering department.
+          </p>
 
-        <ul className="bullets">
-          <li><strong>GIS</strong> — Interactive utility network mapping and spatial analysis</li>
-          <li><strong>Network Management System</strong> — Real-time network monitoring and control workflows</li>
-          <li><strong>Compliance Reporting System</strong> — Automated generation of regulatory compliance reports</li>
-          <li><strong>Technical Data Repository</strong> — Centralized store for engineering documents and records</li>
-          <li><strong>Transformer Management System</strong> — Asset tracking and maintenance scheduling for transformers</li>
-          <li><strong>Calibration Management System</strong> — Instrument calibration records and due-date tracking</li>
-          <li><strong>Meter Data Management System</strong> — Meter asset registry, readings, and data validation</li>
-          <li><strong>Network Reference Center</strong> — Reference library for standards, drawings, and technical specifications</li>
-        </ul>
+          <ul className="bullets">
+            <li><strong>GIS</strong> — Interactive utility network mapping and spatial analysis</li>
+            <li><strong>Network Management System</strong> — Real-time network monitoring and control workflows</li>
+            <li><strong>Compliance Reporting System</strong> — Automated generation of regulatory compliance reports</li>
+            <li><strong>Technical Data Repository</strong> — Centralized store for engineering documents and records</li>
+            <li><strong>Transformer Management System</strong> — Asset tracking and maintenance scheduling for transformers</li>
+            <li><strong>Calibration Management System</strong> — Instrument calibration records and due-date tracking</li>
+            <li><strong>Meter Data Management System</strong> — Meter asset registry, readings, and data validation</li>
+            <li><strong>Network Reference Center</strong> — Reference library for standards, drawings, and technical specifications</li>
+          </ul>
 
-        {renderCarousel(webdevItems, 'carousel-fast', 96)}
-      </section>
+          {renderCarousel(webdevItems, 'carousel-fast', 96)}
+        </TiltCard>
+      </Reveal>
 
       <footer className="footer">
         © {new Date().getFullYear()} Mario C. Calatan

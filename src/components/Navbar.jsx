@@ -1,5 +1,30 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { motion, AnimatePresence } from "framer-motion"
+
+function NavItem({ to, end, onClick, layoutId, children }) {
+  return (
+    <NavLink
+      to={to}
+      end={end}
+      onClick={onClick}
+      className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+    >
+      {({ isActive }) => (
+        <>
+          {children}
+          {isActive && (
+            <motion.span
+              className="nav-underline"
+              layoutId={layoutId}
+              transition={{ type: "spring", stiffness: 380, damping: 32 }}
+            />
+          )}
+        </>
+      )}
+    </NavLink>
+  )
+}
 
 function Navbar() {
     const base = import.meta.env.BASE_URL
@@ -24,16 +49,16 @@ function Navbar() {
 
         {/* Desktop nav */}
         <nav className="nav-desktop">
-          <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/education">Education</NavLink>
-          <NavLink to="/experience">Professional Experience</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavItem to="/" end layoutId="nav-pill-desktop">Home</NavItem>
+          <NavItem to="/education" layoutId="nav-pill-desktop">Education</NavItem>
+          <NavItem to="/experience" layoutId="nav-pill-desktop">Professional Experience</NavItem>
+          <NavItem to="/projects" layoutId="nav-pill-desktop">Projects</NavItem>
 
           <a href="https://www.linkedin.com/in/marioccalatan/" target="_blank" rel="noreferrer">
             LinkedIn
           </a>
 
-          <NavLink to="/contact">Contact</NavLink>
+          <NavItem to="/contact" layoutId="nav-pill-desktop">Contact</NavItem>
 
           <a href={`${base}assets/Mario_Calatan_Full_Resume.pdf`}  download>
             Resume (PDF)
@@ -42,34 +67,45 @@ function Navbar() {
       </div>
 
       {/* Mobile dropdown menu */}
-      <div className={`nav-mobile ${open ? "open" : ""}`}>
-        <div className="wrap">
-          <nav className="nav-mobile-links">
-            <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
-            <NavLink to="/education" onClick={closeMenu}>Education</NavLink>
-            <NavLink to="/experience" onClick={closeMenu}>Professional Experience</NavLink>
-            <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
-            <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            className="nav-mobile"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="wrap">
+              <nav className="nav-mobile-links">
+                <NavItem to="/" end onClick={closeMenu} layoutId="nav-pill-mobile">Home</NavItem>
+                <NavItem to="/education" onClick={closeMenu} layoutId="nav-pill-mobile">Education</NavItem>
+                <NavItem to="/experience" onClick={closeMenu} layoutId="nav-pill-mobile">Professional Experience</NavItem>
+                <NavItem to="/projects" onClick={closeMenu} layoutId="nav-pill-mobile">Projects</NavItem>
+                <NavItem to="/contact" onClick={closeMenu} layoutId="nav-pill-mobile">Contact</NavItem>
 
-            <a
-              href="https://www.linkedin.com/in/marioccalatan/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeMenu}
-            >
-              LinkedIn
-            </a>
+                <a
+                  href="https://www.linkedin.com/in/marioccalatan/"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={closeMenu}
+                >
+                  LinkedIn
+                </a>
 
-            <a
-              href="/assets/Mario_Calatan_Full_Resume.pdf"
-              download
-              onClick={closeMenu}
-            >
-              Resume (PDF)
-            </a>
-          </nav>
-        </div>
-      </div>
+                <a
+                  href="/assets/Mario_Calatan_Full_Resume.pdf"
+                  download
+                  onClick={closeMenu}
+                >
+                  Resume (PDF)
+                </a>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

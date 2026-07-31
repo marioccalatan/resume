@@ -1,7 +1,9 @@
+import Reveal from "../components/Reveal"
+
 function EducationPage() {
   return (
     <main className="wrap">
-      <section className="card">
+      <Reveal as="section" className="card">
         <h1>Education</h1>
 
         <table className="edu-table">
@@ -74,7 +76,7 @@ function EducationPage() {
         </div>
 
         <p className="muted small">(Additional trainings and seminars to be added)</p>
-      </section>
+      </Reveal>
 
       <footer className="footer">
         © {new Date().getFullYear()} Mario C. Calatan

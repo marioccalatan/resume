@@ -1,7 +1,9 @@
+import Reveal from "../components/Reveal"
+
 function ContactPage() {
   return (
     <main className="wrap">
-      <section className="card">
+      <Reveal as="section" className="card">
         <h1>Contact</h1>
         <p className="meta">
           Phone / Viber / WhatsApp: <a href="tel:+639178778099">+63 917 877 8099</a><br />
@@ -14,7 +16,7 @@ function ContactPage() {
             github.com/marioccalatan
           </a>
         </p>
-      </section>
+      </Reveal>
     </main>
   )
 }

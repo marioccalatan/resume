@@ -1,7 +1,10 @@
+import Reveal from "../components/Reveal"
+import { StaggerGroup, StaggerItem } from "../components/Stagger"
+
 function ExperiencePage() {
   return (
     <main className="wrap">
-      <section className="card">
+      <Reveal as="section" className="card">
         <h1>Professional Experience</h1>
         <p className="meta">
           Experience aligned with Smart Grid modernization, ADMS/AMI integration, utility R&D, and
@@ -9,21 +12,21 @@ function ExperiencePage() {
         </p>
 
         <h2>Software Development &amp; Automation</h2>
-        <ul className="skills-list">
-          <li><strong>Web-based Utility Systems Development</strong> - Built internal platforms for calibration, metering, compliance, and technical records management</li>
-          <li><strong>Full-stack Development</strong> - PHP, Python, JavaScript, React, and Node.js</li>
-          <li><strong>Utility Data Integration and Analytics</strong> - Connected operational datasets to reporting and decision-support workflows</li>
-          <li><strong>Database Design and Optimization</strong> - Schema design, query optimization, and data quality controls for utility applications</li>
-          <li><strong>AI-Assisted Development and Automation</strong> - Applied GitHub Copilot and AI tools to accelerate coding, automation, and documentation tasks</li>
-        </ul>
+        <StaggerGroup className="skills-list">
+          <StaggerItem><strong>Web-based Utility Systems Development</strong> - Built internal platforms for calibration, metering, compliance, and technical records management</StaggerItem>
+          <StaggerItem><strong>Full-stack Development</strong> - PHP, Python, JavaScript, React, and Node.js</StaggerItem>
+          <StaggerItem><strong>Utility Data Integration and Analytics</strong> - Connected operational datasets to reporting and decision-support workflows</StaggerItem>
+          <StaggerItem><strong>Database Design and Optimization</strong> - Schema design, query optimization, and data quality controls for utility applications</StaggerItem>
+          <StaggerItem><strong>AI-Assisted Development and Automation</strong> - Applied GitHub Copilot and AI tools to accelerate coding, automation, and documentation tasks</StaggerItem>
+        </StaggerGroup>
 
         <h2>Databases</h2>
-        <ul className="skills-list">
-          <li><strong>PostgreSQL</strong></li>
-          <li><strong>MySQL/MariaDB</strong></li>
-          <li><strong>Oracle</strong></li>
-          <li><strong>Microsoft SQL Server</strong></li>
-        </ul>
+        <StaggerGroup className="skills-list">
+          <StaggerItem><strong>PostgreSQL</strong></StaggerItem>
+          <StaggerItem><strong>MySQL/MariaDB</strong></StaggerItem>
+          <StaggerItem><strong>Oracle</strong></StaggerItem>
+          <StaggerItem><strong>Microsoft SQL Server</strong></StaggerItem>
+        </StaggerGroup>
 
         <h2>Role Alignment Highlights</h2>
         <ul className="bullets">
@@ -38,14 +41,14 @@ function ExperiencePage() {
         </ul>
 
         <h2>Skills</h2>
-        <ul className="skills-list">
-          <li><strong>Smart Grid Architecture and Integration</strong> - AMI/AMR, SCADA, OMS, DMS, and ADMS readiness</li>
-          <li><strong>Technical Working Group Leadership</strong> - Cross-functional facilitation, stakeholder coordination, and policy support</li>
-          <li><strong>Grid Modernization Program Management</strong> - Pilot design, rollout execution, and utility project governance</li>
-          <li><strong>Business Analytics for Utility Operations</strong> - Grid data interpretation, reporting, and operational insight generation</li>
-          <li><strong>R&D and Technology Validation</strong> - POC execution, framework evaluation, and implementation audit support</li>
-          <li><strong>Regulatory and Management System Compliance</strong> - Structured documentation, calibration controls, and audit readiness</li>
-        </ul>
+        <StaggerGroup className="skills-list">
+          <StaggerItem><strong>Smart Grid Architecture and Integration</strong> - AMI/AMR, SCADA, OMS, DMS, and ADMS readiness</StaggerItem>
+          <StaggerItem><strong>Technical Working Group Leadership</strong> - Cross-functional facilitation, stakeholder coordination, and policy support</StaggerItem>
+          <StaggerItem><strong>Grid Modernization Program Management</strong> - Pilot design, rollout execution, and utility project governance</StaggerItem>
+          <StaggerItem><strong>Business Analytics for Utility Operations</strong> - Grid data interpretation, reporting, and operational insight generation</StaggerItem>
+          <StaggerItem><strong>R&D and Technology Validation</strong> - POC execution, framework evaluation, and implementation audit support</StaggerItem>
+          <StaggerItem><strong>Regulatory and Management System Compliance</strong> - Structured documentation, calibration controls, and audit readiness</StaggerItem>
+        </StaggerGroup>
 
         <div className="timeline">
           <div className="item">
@@ -110,7 +113,7 @@ function ExperiencePage() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       <footer className="footer">
         © {new Date().getFullYear()} Mario C. Calatan
